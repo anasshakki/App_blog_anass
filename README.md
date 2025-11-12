@@ -26,10 +26,7 @@ Suivez ces étapes pour lancer le projet localement :
 
 1.  Clonez ce dépôt (ou téléchargez le zip) :
     ```bash
-    # Remplacez par l'URL de VOTRE dépôt GitHub
-    git clone [https://github.com/VotreNom/mon-mini-blog.git](https://github.com/VotreNom/mon-mini-blog.git)
-    ```
-
+    git clone [https://github.com/anasshakki
 2.  Naviguez dans le dossier du projet :
     ```bash
     cd mon-mini-blog
