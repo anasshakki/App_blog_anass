@@ -1,0 +1,23 @@
+<%- include('_header') %>
+
+<h1 class="mb-4">Articles Récents</h1>
+
+<% posts.forEach(post => { %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h2 class="card-title"><%= post.title %></h2>
+      <p class="card-text"><%= post.content %></p>
+      <div class="text-muted mb-2">
+        Publié le <%= post.createdAt.toLocaleDateString('fr-FR') %>
+      </div>
+      
+      <a href="/edit/<%= post.id %>" class="btn btn-primary btn-sm">Modifier</a>
+      
+      <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" class="d-inline">
+        <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+      </form>
+    </div>
+  </div>
+<% }) %>
+
+<%- include('_footer') %>

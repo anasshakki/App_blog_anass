@@ -1,0 +1,19 @@
+<%- include('_header') %>
+
+<h1 class="mb-4">Modifier l'Article</h1>
+
+<form action="/posts/<%= post.id %>?_method=PUT" method="POST">
+  <div class="mb-3">
+    <label for="title" class="form-label">Titre</label>
+    <input type="text" id="title" name="title" class="form-control" value="<%= post.title %>" required>
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Contenu</label>
+    <textarea id="content" name="content" class="form-control" rows="5" required><%= post.content %></textarea>
+  </div>
+  
+  <a href="/" class="btn btn-secondary">Annuler</a>
+  <button type="submit" class="btn btn-primary">Mettre à jour</button>
+</form>
+
+<%- include('_footer') %>

@@ -1,0 +1,119 @@
+/* --- 1. Polices & Fond --- */
+/* On importe Poppins (titres) et Roboto (corps) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap');
+
+/* Animation "Fondu" (Fade-in) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Police de base */
+  background-color: #FADADD;
+  padding-bottom: 5rem;
+}
+
+/* --- 2. Conteneur & Titres --- */
+.container {
+  /* Limite la largeur sur les grands écrans pour un look blog */
+  max-width: 960px;
+}
+
+h1, h2, .navbar-brand {
+  font-family: 'Poppins', sans-serif; /* Police des titres */
+  font-weight: 700;
+}
+
+h2.card-title {
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* --- 3. Barre de Navigation --- */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  border-bottom: 1px solid #e9ecef;
+}
+
+.navbar-brand {
+  color: #1a1a1a !important;
+}
+
+/* --- 4. Bouton "Nouveau Post" (Gradient) --- */
+.btn-outline-success {
+  border-radius: 50px;
+  font-weight: 500;
+  border-width: 2px;
+  border-color: #007bff;
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+.btn-outline-success:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* --- 5. Cartes d'Article (L'effet principal) --- */
+.card {
+  border: none;
+  border-radius: 16px; /* Plus arrondi */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease; /* Animation plus longue */
+  
+  /* L'animation de fondu est appliquée ici ! */
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* --- 6. Effet de Survol "Glow" (Lueur) --- */
+.card:hover {
+  /* On soulève la carte */
+  transform: translateY(-8px);
+  
+  /* On crée une "lueur" (glow) avec un box-shadow de couleur */
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.1);
+  
+  /* On change la couleur du titre au survol */
+  h2.card-title {
+    color: #007bff;
+  }
+}
+
+/* --- 7. Boutons d'action (Modifier / Supprimer) --- */
+.btn {
+  border-radius: 50px; /* Forme pilule parfaite */
+  padding: 8px 20px;
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  background-image: linear-gradient(to right, #007bff, #0056b3);
+  color: white;
+}
+
+.btn-danger {
+  background-image: linear-gradient(to right, #dc3545, #b02a37);
+  color: white;
+}
+
+/* Effet au survol des boutons */
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Correction forcee du titre de la navbar en blanc */
+.navbar-brand.text-white {
+  color: white !important;
+}
